@@ -1,6 +1,6 @@
 {
   "name": "@glubs9/jamb",
-  "version": "1.1.1",
+  "version": "1.1.5",
   "description": "A command line javascript preprocessor for an amb-like function in javascript",
   "main": "index.js",
   "preferGlobal": true,
@@ -13,6 +13,9 @@
   "author": "glubs9",
   "license": "MIT",
   "bin": {
-    "jamb": "bin/parse.js"
-  }
+    "jamb": "parse.js"
+  },
+  "homepage": "https://github.com/Glubs9/Jamb",
+  "bugs": "https://github.com/Glubs9/Jamb/issues",
+  "repository": "github:Glubs9/Jamb"
 }
