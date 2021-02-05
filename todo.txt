@@ -4,3 +4,6 @@
 	}
 	will parse as function make_into_lamb((), (n) => {{
 	})};
+- actually this is really cool as it kinda separates logical purity (ok not functional purity but
+		the logical purity with reducing the search space) is really neatly separated
+	into fail/assert and amb. very cool
