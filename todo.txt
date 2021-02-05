@@ -1,0 +1,6 @@
+- i am not handling functions that end in amb but are not amb
+	eg:
+	function make_into_lamb() {
+	}
+	will parse as function make_into_lamb((), (n) => {{
+	})};
