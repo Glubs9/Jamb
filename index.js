@@ -35,5 +35,53 @@ function assert(bool) {
 	}
 }
 
-module.exports = {
-	amb, fail, assert}
+function* natural_numbers() {
+	for (let n = 1; ;n++) {
+		yield n;
+	}
+}
+
+function* range(low, high) {
+	for (let n = low; n < high; n++) {
+		yield n;
+	}
+}
+
+function* prefixes(arr) {
+	for (let n = 0; n <= arr.length; n++) {
+		yield arr.slice(0,n);
+	}
+}
+
+function* suffixes(arr) {
+	for (let n = 0; n < arr.length; n++) {
+		yield arr.slice(n,arr.length+1); //might error
+	}
+}
+
+function remove_at(arr, n) {
+	if (n === arr.length -1) {return arr.slice(0,arr.length-1);}
+	else {return arr.slice(0,n) + arr.slice(n,arr.length-1);}
+}
+
+//might be able to clean up this with higher order functions
+//this is actually pretty fast
+//but it doesn't work man i'm very mad
+function* permutations(arr) {
+	console.log("in permutations" + arr);
+	if (arr.length == 1) {yield arr;}
+	else {
+		console.log("else");
+		for (let n = 0; n < arr.length; n++) {
+			console.log("in inital for loop");
+			let tmp = remove_at(arr,n);
+			console.log("tmp is now " + tmp);
+			for (const i of permutations(tmp)) {
+				console.log("in for of loop with " + i);
+				yield [arr[n]] + i;
+			}
+		}
+	}
+}
+
+module.exports = {AmbError, amb, fail, assert, natural_numbers, range, prefixes, suffixes, permutations};
