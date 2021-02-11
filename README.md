@@ -32,3 +32,6 @@ permutations(array) is a (not yet working) generator that generates all the perm
 # important notes
 amb works by inserting a closure from the call to the end of the scope. I am bad at programming so I defined the end of scope as when I find an unmatched curly bracket. This means amb won't work sometimes when you think it will. Importantly amb within a function does not retain it's ambigiousness once the function returns (it will return properly though don't worry). If you want this property to be retained, please pass a continuation to the function in order for it to work.                   
 something really fun is that the assert function is logically pure and the amb function is not. This kinda half solves a problem with prolog in that logical purity is not enforced and logical purity and impurity is mixed without any complaining on the part of prolog. (this assume functional purity within assert).                                 
+# examples
+You can find examples of how this library can be used in test.js             
+I am particularly fond of the map colouring and the prime finding algorithms (the prime finding algorithm is kinda like constraing logic programming and the map colouring algorithm is pretty elegant).          
