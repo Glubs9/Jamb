@@ -94,4 +94,49 @@ function slow_sort(arr) {
 	return test_arr;
 }
 
-console.log(slow_sort([5,1,4,3,29]));
+// console.log(slow_sort([5,1,4,3,29])); //(doesn't work cause permutations doesnt work)
+
+
+/*
+4 colour graph colouring attempt
+problem taken from this page https://www.metalevel.at/prolog/optimization
+
+the graph is defined as (bidirectional adjacency list)
+a -> {b,c,d,f}
+b -> {c,d}
+c -> {d,e]
+d -> {e, f}
+e -> {f}
+f -> {}
+
+*/
+
+const colours = ["red", "green", "blue", "yellow"];
+
+amb(a, colours);
+amb(b, colours);
+amb(c, colours);
+amb(d, colours);
+amb(e, colours);
+amb(f, colours);
+
+let adj = [
+	[a, [b,c,d,f]],
+	[b, [c,d]],
+	[c, [d,e]],
+	[d, [e,f]],
+	[e, [f]]
+];
+
+for (const n of adj) {
+	assert(!(n[1].includes(n[0])));
+}
+
+//printing is probably not the most cleanest
+//it also works! (the same solution as prolog finds!)
+console.log("a is " + a);
+console.log("b is " + b);
+console.log("c is " + c);
+console.log("d is " + d);
+console.log("e is " + e);
+console.log("f is " + f);
